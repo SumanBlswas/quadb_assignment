@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../redux/store";
 import { fetchJobData } from "../redux/job/job.action";
 import Authentication from "./Authentication";
+import { programmingLanguages } from "../Languages/ProgrammingLanguages";
 
 const Home = ({
   isLoggedIn,
@@ -64,9 +65,11 @@ const Home = ({
               onChange={handleLanguageSelect}
               value={selectedLanguage}
             >
-              <option value="javascript">JavaScript</option>
-              <option value="python">Python</option>
-              <option value="java">Java</option>
+              {programmingLanguages.map((el, index) => (
+                <option key={index} value={el}>
+                  {el}
+                </option>
+              ))}
             </Select>
           </FormControl>
           <Button mt={4} onClick={viewJobs} isLoading={loading}>

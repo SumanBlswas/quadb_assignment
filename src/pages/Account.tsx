@@ -218,7 +218,7 @@ const Account = ({ setIsLoggedIn }: { setIsLoggedIn: CallableFunction }) => {
             <Button colorScheme="red" onClick={confirmDeleteAccount}>
               Delete
             </Button>
-            <Button colorScheme="gray" onClick={closeDeleteModal}>
+            <Button colorScheme="gray" onClick={closeDeleteModal} ml={5}>
               Cancel
             </Button>
           </ModalFooter>

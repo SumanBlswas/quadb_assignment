@@ -65,31 +65,18 @@ const JobDetails = () => {
     });
   };
 
-  const handleFileChange = (e: any) => {
-    const fileInput = e.target;
-    if (fileInput.files && fileInput.files.length > 0) {
-      const file = fileInput.files[0];
-      setFormData({
-        ...formData,
-        resume: file,
-      });
-    }
+  const handleFileChange = (files: any) => {
+    const file = files[0];
+    setFormData({
+      ...formData,
+      resume: file,
+    });
   };
 
   const handleFormSubmit = () => {
     if (!formData.name || !formData.email || !formData.coverLetter) {
       toast({
         title: "Please fill all required fields",
-        status: "warning",
-        duration: 3000,
-        isClosable: true,
-      });
-      return;
-    }
-
-    if (!formData.resume) {
-      toast({
-        title: "Image and Resume are required",
         status: "warning",
         duration: 3000,
         isClosable: true,
